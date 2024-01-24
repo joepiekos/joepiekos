@@ -19,7 +19,7 @@
         <button type="submit">Get Daily News</button>
     </form>
     {% if message %}
-        <p>{{ message }}</p>
+        <p> response status code: {{ status }}</p>
     {% endif %}
     <b>daily bethan message</b>: {{ bethanMessage }}
     <p><img src="{{ url_for('static', filename='junimo.jpeg') }}" /></p>
