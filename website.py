@@ -6,6 +6,7 @@ import smtplib
 from email.mime.text import MIMEText
 
 app = Flask(__name__)
+app._static_folder = 'static'
 
 def scrape_cricinfo_news():
     url = "https://www.espncricinfo.com/cricket-news"
@@ -57,13 +58,13 @@ def index():
 def get_daily_news():
     # Scrape daily news articles
     news_articles = scrape_cricinfo_news()
-
+    bethanMessage = "your mind is filled with thoughts of chip"
     if news_articles:
         # Send the news articles via email
         send_email(news_articles)
         return render_template('index.html', message='Daily news articles sent to your email!')
     else:
-        return render_template('index.html', message='Failed to fetch news articles.')
+        return render_template('index.html', message='Failed to fetch news articles.',bethanMessage = bethanMessage)
 
 if __name__ == '__main__':
     app.run(debug=True)
