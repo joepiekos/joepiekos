@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Random Number Generator</title>
+    <title>Daily Cricket News</title>
     <style>
-        /* Add your CSS styles here */
-        /* For example: */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -15,8 +13,14 @@
     </style>
 </head>
 <body>
-    <h1>Random Number Generator</h1>
-    <p>Generated Number: <strong>{{ number }}</strong></p>
-    <b>daily Bethan message: {{ message }}</b>
+    <h1>Daily Cricket News</h1>
+    <p>Click the button below to receive the latest cricket news in your email:</p>
+    <form action="/get_daily_news" method="post">
+        <button type="submit">Get Daily News</button>
+    </form>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <b>daily bethan message</b>: {{ bethanMessage }}
 </body>
 </html>
