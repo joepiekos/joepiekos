@@ -36,7 +36,7 @@ def send_email(news_articles):
 
     # Create the email content
     subject = 'Daily Cricket News'
-    body = '\n'.join([f"{article['title']} - {article['link']}" for article in news_articles])
+    body = '\n'.join([f"{article['title']} - https://www.espncricinfo.com{article['link']}" for article in news_articles])
     
     msg = MIMEText(body)
     msg['Subject'] = subject
@@ -61,7 +61,7 @@ def send_email(news_articles):
 
 @app.route('/', methods=['GET'])
 def index():
-    bethanMessage = "your mind is filled with thoughts of chip"
+    bethanMessage = "can't wait for a formal and to see you!"
     return render_template('index.html', bethanMessage = bethanMessage)
 
 @app.route('/get_daily_news', methods=['POST'])
