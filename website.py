@@ -76,6 +76,10 @@ def get_daily_news():
     else:
         return render_template('index.html', message='Failed to fetch news articles.',bethanMessage = bethanMessage)
 
+def get_daily_news_daily():
+    news_articles = scrape_cricinfo_news()
+    send_email(news_articles)
+
 if __name__ == '__main__':
     app.run(debug=True)
     #tst = scrape_cricinfo_news()
