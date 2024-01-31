@@ -68,7 +68,7 @@ def index():
 def get_daily_news():
     # Scrape daily news articles
     news_articles = scrape_cricinfo_news()
-    bethanMessage = "your mind is filled with thoughts of chip"
+    bethanMessage = "hope you have a lovely day and a good meel. miss you, love joe"
     if news_articles:
         # Send the news articles via email
         send_email(news_articles)
