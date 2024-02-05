@@ -61,7 +61,7 @@ def send_email(news_articles):
 
 @app.route('/', methods=['GET'])
 def index():
-    bethanMessage = "hope you have a lovely day and a good meel. miss you, love joe"
+    bethanMessage = "excited for a dinner tomorrow with you <3"
     return render_template('index.html', bethanMessage = bethanMessage)
 
 @app.route('/get_daily_news', methods=['POST'])
