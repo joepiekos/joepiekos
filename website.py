@@ -61,18 +61,18 @@ def send_email(news_articles):
 
 @app.route('/', methods=['GET'])
 def index():
-    bethanMessage = "excited for a dinner tomorrow with you <3"
+    bethanMessage = "you look very cute rn"
     return render_template('index.html', bethanMessage = bethanMessage)
 
 @app.route('/get_daily_news', methods=['POST'])
 def get_daily_news():
     # Scrape daily news articles
     news_articles = scrape_cricinfo_news()
-    bethanMessage = "hope you have a lovely day and a good meel. miss you, love joe"
+    bethanMessage = "you find a secret message! love you"
     if news_articles:
         # Send the news articles via email
         send_email(news_articles)
-        return render_template('index.html', message='Daily news articles sent to your email!', status = news_articles[0]['link'])
+        return render_template('index.html', message='Daily news articles sent to your email!', status = news_articles[0]['link'], bethanMessage = bethanMessage)
     else:
         return render_template('index.html', message='Failed to fetch news articles.',bethanMessage = bethanMessage)
 
