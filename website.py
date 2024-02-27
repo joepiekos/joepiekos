@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import smtplib
 from email.mime.text import MIMEText
+from datetime import datetime
 
 app = Flask(__name__)
 app._static_folder = 'static'
@@ -35,9 +36,15 @@ def send_email(news_articles):
     recipient_email = 'joe.piekos@gmail.com'
 
     # Create the email content
-    subject = 'Daily Cricket News'
-    body = '\n'.join([f"{article['title']} - https://www.espncricinfo.com{article['link']}" for article in news_articles])
+    #subject = 'Daily Cricket News'
+    #body = '\n'.join([f"{article['title']} - https://www.espncricinfo.com{article['link']}" for article in news_articles])
     
+    subject = 'helloooooo'
+    msg_options = ['love you x', 'a email wot a treat! /n love joe /n <3', 'cant wait to play a stardew with you soon! /n love from /n joe', 'https://www.youtube.com/shorts/lcXMAfVekyM', 'bibibi \n from joe', 'email boyyyyyyyyy for a cute girllllll', 'dear bethan \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n you are lovely and nice \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n love from \n joe']
+    current_day_of_week = datetime.now().weekday()
+    body = msg_options[current_day_of_week]
+
+
     msg = MIMEText(body)
     msg['Subject'] = subject
     msg['From'] = smtp_username

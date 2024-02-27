@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import smtplib
 from email.mime.text import MIMEText
+from datetime import datetime
 
 
 def send_email(news_articles):
@@ -17,7 +18,7 @@ def send_email(news_articles):
     # Create the email content
     subject = 'Daily Cricket News'
     body = '\n'.join([f"{article['title']} - https://www.espncricinfo.com/{article['link']}" for article in news_articles])
-    
+
     msg = MIMEText(body)
     msg['Subject'] = subject
     msg['From'] = smtp_username
