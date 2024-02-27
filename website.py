@@ -40,7 +40,7 @@ def send_email(news_articles):
     #body = '\n'.join([f"{article['title']} - https://www.espncricinfo.com{article['link']}" for article in news_articles])
     
     subject = 'helloooooo'
-    msg_options = ['love you x', 'a email wot a treat! /n love joe /n <3', 'cant wait to play a stardew with you soon! /n love from /n joe', 'https://www.youtube.com/shorts/lcXMAfVekyM', 'bibibi \n from joe', 'email boyyyyyyyyy for a cute girllllll', 'dear bethan \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n you are lovely and nice \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n love from \n joe']
+    msg_options = ['love you x', 'a email wot a treat! \n love joe \n <3', 'cant wait to play a stardew with you soon! \n love from \n joe', 'https://www.youtube.com/shorts/lcXMAfVekyM', 'bibibi \n from joe', 'email boyyyyyyyyy for a cute girllllll', 'dear bethan \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n you are lovely and nice \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n love from \n joe']
     current_day_of_week = datetime.now().weekday()
     body = msg_options[current_day_of_week]
 
