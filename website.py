@@ -33,7 +33,7 @@ def send_email(news_articles):
     smtp_port = 587
     smtp_username = 'joe.piekos@gmail.com'
     smtp_password = 'iduo stcc hpsb zhvc'
-    recipient_email = 'joe.piekos@gmail.com'
+    recipient_email = 'bethanwhite55@gmail.com'
 
     # Create the email content
     #subject = 'Daily Cricket News'
